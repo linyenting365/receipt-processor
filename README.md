@@ -12,28 +12,20 @@ To run this application, you will need:
 
 Follow these simple steps to get your application running:
 
-### Step 1: Clone the Repository
-
-Clone the repository to your local machine using:
+### Step 2: Pull the Docker Image
 
 ```bash
-git clone <Your-Repository-URL>
-cd <Repository-Name>
-```
-
-### Step 2: Build the Docker Image
-
-```bash
-docker build -t receipt-processor-app .
+docker build pull linyen365/receipt-processor-app:v1.0
 ```
 ### Step 3: Run on the Docker container
 
 ```bash
-docker run -p 8080:8080 receipt-processor-app
+docker run -p 4000:8080 linyen365/receipt-processor-app:v1.0
 ```
 
 ### Step 4: Run curl commend to send request
 
+#### Create receipt
 POST request:
 
 ```bash
@@ -64,7 +56,7 @@ curl -X POST http://localhost:8080/receipts/process \
            "total": "9.00"
          }'
 ```
-
+#### Get exist receipt points
 Get Request:
 ```bash
 curl -X GET http://localhost:8080/receipts/{receipt-id}/points
