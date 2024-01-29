@@ -15,7 +15,7 @@ Follow these simple steps to get your application running:
 ### Step 2: Pull the Docker Image
 
 ```bash
-docker build pull linyen365/receipt-processor-app:v1.0
+docker pull linyen365/receipt-processor-app:v1.0
 ```
 ### Step 3: Run on the Docker container
 
@@ -29,7 +29,7 @@ docker run -p 4000:8080 linyen365/receipt-processor-app:v1.0
 POST request:
 
 ```bash
-curl -X POST http://localhost:8080/receipts/process \
+curl -X POST http://localhost:4000/receipts/process \
      -H "Content-Type: application/json" \
      -d '{
            "retailer": "M&M Corner Market",
