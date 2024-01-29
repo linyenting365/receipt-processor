@@ -21,29 +21,23 @@ public class ScoreService {
     private static final Integer TIME_SCORE = 10;
     private static final Integer DATE_SCORE = 6;
     private static final Integer ITEM_PAIR_SCORE = 5;
-    private static final Logger logger = LogManager.getLogger(ScoreService.class);
 
     public int processReceiptScore(Receipt receipt){
         int score = 0;
 
         score += getRetailerNameScore(receipt.getRetailerName());
-        logger.info("Retailer name score {}", score);
 
         score += getDateScore(receipt.getPurchaseDate().getDayOfMonth());
 
-        logger.info("Date score {}", score);
 
         score += getTimeScore(receipt.getPurchaseTime());
 
-        logger.info("Time score {}", score);
 
         score += getTotalPriceScore(receipt.getTotalPrice());
 
-        logger.info("Total price score {}", score);
 
         score += getItemsScore(receipt.getItems());
 
-        logger.info("Item score {}", score);
 
         return score;
     }
@@ -64,7 +58,6 @@ public class ScoreService {
         }
         // calculate number of a pair of description score
         score += (items.size() / 2) * ITEM_PAIR_SCORE;
-        logger.info("Pair item score {}", score);
         return score;
     }
 

@@ -18,7 +18,7 @@ public class StorageService {
          idScoreMap.put(id, score);
     }
 
-    public Integer getScore(String id){
-        return idScoreMap.get(id);
+    public String getScore(String id){
+        return isIdContains(id) ? idScoreMap.get(id).toString() : null;
     }
 }

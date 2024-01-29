@@ -24,7 +24,7 @@ class StorageServiceTest {
 
         storageService.putIdWithScore(testId, testScore);
 
-        assertEquals(testScore, storageService.getScore(testId));
+        assertEquals("100", storageService.getScore(testId));
     }
 
     @Test

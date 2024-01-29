@@ -67,7 +67,7 @@ curl -X POST http://localhost:8080/receipts/process \
 
 Get Request:
 ```bash
-curl -X GET http://localhost:8080/receipts/{receipt-id}/point
+curl -X GET http://localhost:8080/receipts/{receipt-id}/points
 ```
 
 ### Step 5: Stopping the Application
